@@ -47,15 +47,14 @@ Build the vcpkg executable:
 ```bash
 .\bootstrap-vcpkg.bat
 ```
-Step 3: Install Libraries Using vcpkg
-Integrate vcpkg with your project
+Step 3: Integrate vcpkg with your project
 ```bash
 .\vcpkg integrate install
 ```
 This will make vcpkg work seamlessly with your IDE (in our case viusal studio).
 
-Note: You can install vcpkg for vs code, but with visual studio, it will be easier as you will just have download libraries from vcpkg and visual studio will automatically link them to your code.
-But if you use vs code, you will have to make your own cmake file for crow and integrate it with your code.
+Note: You can install vcpkg for vs code, but with visual studio, it will be easier as you will just have download libraries from vcpkg and visual studio will automatically link them to your code due to build in tools.
+But if you use vs code, you will have to make your own cmake file for crow and associate it with mingw compiler, which is a hassle.
 
 3. Install crow library using vcpkg
 First of all, go to the directory in which vcpkg is downloaded and write
