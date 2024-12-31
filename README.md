@@ -31,6 +31,7 @@ The remaining cards are placed in a pile, face down, near the dealer to use late
 ## Requirements (to run code)
 1. visual studio installed with C++ build tools.
 2. install VCPKG package manager (if not already installed) by following these steps
+
 Step 1: Clone the vcpkg Repository
 Open your terminal or command prompt.
 Clone the vcpkg repository from GitHub:
@@ -47,12 +48,14 @@ Build the vcpkg executable:
 .\bootstrap-vcpkg.bat
 ```
 Step 3: Install Libraries Using vcpkg
-Integrate vcpkg with your project (optional but recommended for Visual Studio Code or Visual Studio users):
+Integrate vcpkg with your project
 ```bash
-Copy code
 .\vcpkg integrate install
 ```
-This will make vcpkg work seamlessly with your IDE.
+This will make vcpkg work seamlessly with your IDE (in our case viusal studio).
+
+Note: You can install vcpkg for vs code, but with visual studio, it will be easier as you will just have download libraries from vcpkg and visual studio will automatically link them to your code.
+But if you use vs code, you will have to make your own cmake file for crow and integrate it with your code.
 
 3. Install crow library using vcpkg
 First of all, go to the directory in which vcpkg is downloaded and write
