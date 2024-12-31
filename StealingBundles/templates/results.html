@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Results</title>
+    <script src="static/main.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1abc9c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .results-container {
+            text-align: center;
+            background-color: #2ecc71;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        button {
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+            button:hover {
+                background-color: #2980b9;
+                transform: scale(1.05);
+            }
+
+            button:active {
+                transform: scale(1);
+            }
+    </style>
+</head>
+<body onload="finish()">
+    <div class="results-container">
+        <h1 id="msg"></h1>
+        <div id="xmsg" class="message"></div>
+        <button id="play-again">Play Again</button>
+    </div>
+
+    <canvas class="confetti"></canvas>
+
+    <script>
+        document.getElementById('play-again').addEventListener('click', () => {
+            window.location.href = '/';
+        });
+
+        const canvas = document.querySelector('.confetti');
+        const ctx = canvas.getContext('2d');
+        const confettiCount = 150;
+        const confetti = [];
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class ConfettiPiece {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height - canvas.height;
+                this.size = Math.random() * 10 + 5;
+                this.speed = Math.random() * 3 + 2;
+                this.angle = Math.random() * 2 * Math.PI;
+                this.spin = Math.random() * 0.1 - 0.05;
+                this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            }
+
+            update() {
+                this.y += this.speed;
+                this.angle += this.spin;
+                if (this.y > canvas.height) {
+                    this.y = -10;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < confettiCount; i++) {
+            confetti.push(new ConfettiPiece());
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confetti.forEach(piece => {
+                piece.update();
+                piece.draw();
+            });
+            requestAnimationFrame(render);
+        }
+
+        render();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
