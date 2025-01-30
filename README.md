@@ -28,7 +28,7 @@ The remaining cards are placed in a pile, face down, near the dealer to use late
 8. After all the cards have been dealt and the last match made, the remaining cards on the table are added the bundle of the player who made the last match.
 9. The winner of the game is the player with the largest bundle or stack of cards.
     
-### Getting Started
+# Getting Started
 ## Requirements (to run code)
 1. visual studio installed with C++ build tools.
 2. install VCPKG package manager (if not already installed) by following these steps
