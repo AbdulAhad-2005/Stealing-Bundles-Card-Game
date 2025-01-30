@@ -27,7 +27,8 @@ The remaining cards are placed in a pile, face down, near the dealer to use late
 7. Play continues as described above.
 8. After all the cards have been dealt and the last match made, the remaining cards on the table are added the bundle of the player who made the last match.
 9. The winner of the game is the player with the largest bundle or stack of cards.
-
+    
+### Getting Started
 ## Requirements (to run code)
 1. visual studio installed with C++ build tools.
 2. install VCPKG package manager (if not already installed) by following these steps
@@ -122,3 +123,5 @@ implements all the functionality of frontend like adding and removing cards out 
 -> you can improve the game's beauty and smoothness, like the result page and allowing user to drag the card to another card (if there is a match) or to pool(if there's not)
 
 -> if you want to enhance the game for large scale like hosting on the web, you can add users to the game, by making accounts and storing user's credentials. A database connectivity will be required for backend.
+
+# Thank you!
