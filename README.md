@@ -32,7 +32,7 @@ The remaining cards are placed in a pile, face down, near the dealer to use late
 **Clone the Repository**
    ```
    git clone https://github.com/AbdulAhad-2005/Stealing-Bundles-Card-Game.git
-   cd Voting-System
+   cd Stealing-Bundles-Card-Game
    ```
 
 ## Requirements (to run code)
