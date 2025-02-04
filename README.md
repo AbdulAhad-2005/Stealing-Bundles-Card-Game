@@ -29,6 +29,11 @@ The remaining cards are placed in a pile, face down, near the dealer to use late
 9. The winner of the game is the player with the largest bundle or stack of cards.
     
 # Getting Started
+**Clone the Repository**
+   ```sh
+   git clone https://github.com/AbdulAhad-2005/Stealing-Bundles-Card-Game.git
+   cd Voting-System
+
 ## Requirements (to run code)
 1. visual studio installed with C++ build tools.
 2. install VCPKG package manager (if not already installed) by following these steps
