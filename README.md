@@ -30,9 +30,10 @@ The remaining cards are placed in a pile, face down, near the dealer to use late
     
 # Getting Started
 **Clone the Repository**
-   ```sh
+   ```
    git clone https://github.com/AbdulAhad-2005/Stealing-Bundles-Card-Game.git
-   cd Voting-System```
+   cd Voting-System
+   ```
 
 ## Requirements (to run code)
 1. visual studio installed with C++ build tools.
